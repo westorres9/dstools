@@ -4,31 +4,26 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
-
 @Entity
-@Table(name = "tb_category")
-public class Category {
+@Table(name = "tb_brand")
+public class Brand {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
+    private String imgUrl;
 
-    @ManyToMany(mappedBy = "categories")
+    @ManyToMany(mappedBy = "brands")
     private Set<Product> products = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(name = "tb_category_department",
-            joinColumns = @JoinColumn(name = "category_id"),
-            inverseJoinColumns = @JoinColumn(name = "department_id"))
-    private Set<Department> departments = new HashSet<>();
-
-    public Category() {
+    public Brand() {
     }
 
-    public Category(Long id, String name) {
+    public Brand(Long id, String name, String imgUrl) {
         this.id = id;
         this.name = name;
+        this.imgUrl = imgUrl;
     }
 
     public Long getId() {
@@ -47,20 +42,24 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Product> getProducts() {
-        return products;
+    public String getImgUrl() {
+        return imgUrl;
     }
 
-    public Set<Department> getDepartments() {
-        return departments;
+    public void setImgUrl(String imgUrl) {
+        this.imgUrl = imgUrl;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Category category = (Category) o;
-        return Objects.equals(id, category.id);
+        Brand brand = (Brand) o;
+        return Objects.equals(id, brand.id);
     }
 
     @Override

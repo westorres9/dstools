@@ -6,27 +6,21 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "tb_category")
-public class Category {
+@Table(name = "tb_deparment")
+public class Department {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
 
-    @ManyToMany(mappedBy = "categories")
-    private Set<Product> products = new HashSet<>();
+    @ManyToMany(mappedBy = "departments")
+    private Set<Category> categories = new HashSet<>();
 
-    @ManyToMany
-    @JoinTable(name = "tb_category_department",
-            joinColumns = @JoinColumn(name = "category_id"),
-            inverseJoinColumns = @JoinColumn(name = "department_id"))
-    private Set<Department> departments = new HashSet<>();
-
-    public Category() {
+    public Department() {
     }
 
-    public Category(Long id, String name) {
+    public Department(Long id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -47,20 +41,16 @@ public class Category {
         this.name = name;
     }
 
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public Set<Department> getDepartments() {
-        return departments;
+    public Set<Category> getCategories() {
+        return categories;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Category category = (Category) o;
-        return Objects.equals(id, category.id);
+        Department that = (Department) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
