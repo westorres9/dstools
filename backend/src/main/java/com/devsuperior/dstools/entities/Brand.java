@@ -1,18 +1,20 @@
 package com.devsuperior.dstools.entities;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 @Entity
 @Table(name = "tb_brand")
-public class Brand {
+public class Brand implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    private String imgUrl;
+
 
     @ManyToMany(mappedBy = "brands")
     private Set<Product> products = new HashSet<>();
@@ -20,10 +22,9 @@ public class Brand {
     public Brand() {
     }
 
-    public Brand(Long id, String name, String imgUrl) {
+    public Brand(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.imgUrl = imgUrl;
     }
 
     public Long getId() {
@@ -42,13 +43,6 @@ public class Brand {
         this.name = name;
     }
 
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
-    }
 
     public Set<Product> getProducts() {
         return products;
