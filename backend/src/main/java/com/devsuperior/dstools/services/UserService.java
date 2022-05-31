@@ -43,7 +43,7 @@ public class UserService implements UserDetailsService {
     private RoleRepository roleRepository;
 
     @Transactional(readOnly = true)
-    public Page<UserDTO> findAllPage(Pageable pageable) {
+    public Page<UserDTO> findAllPaged(Pageable pageable) {
         Page<User> page = userRepository.findAll(pageable);
         return page.map(x -> new UserDTO(x));
     }
@@ -103,7 +103,13 @@ public class UserService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return null;
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(username);
+        if(user == null) {
+            logger.error("User not found" + username);
+            throw new UsernameNotFoundException("Email not Found");
+        }
+        logger.info("User Found " + username);
+        return user;
     }
 }

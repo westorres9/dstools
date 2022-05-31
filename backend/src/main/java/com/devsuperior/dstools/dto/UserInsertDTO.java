@@ -13,7 +13,6 @@ public class UserInsertDTO extends UserDTO {
         return password;
     }
 
-    @Override
     public void setPassword(String password) {
         this.password = password;
     }

@@ -18,8 +18,8 @@ INSERT INTO tb_product (name, description, price, quantity, img_url) VALUES ('Bo
 
 INSERT INTO tb_product_category (product_id, category_id) VALUES (1, 1);
 
-INSERT INTO tb_category_department (category_id, department_id) VALUES (1,1);
+INSERT INTO tb_product_department (product_id, department_id) VALUES (1,1);
 
 INSERT INTO tb_product_brand (product_id, brand_id) VALUES (1,1);
 
-
+INSERT INTO tb_category_department (category_id, department_id) VALUES (1,1);

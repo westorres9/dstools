@@ -2,9 +2,13 @@ package com.devsuperior.dstools.dto;
 
 import com.devsuperior.dstools.entities.Department;
 
+import javax.validation.constraints.NotBlank;
+
 public class DepartmentDTO {
 
     private Long id;
+
+    @NotBlank(message = "Campo obrigatório")
     private String name;
 
     public DepartmentDTO() {

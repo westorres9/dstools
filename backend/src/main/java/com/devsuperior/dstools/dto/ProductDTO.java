@@ -6,6 +6,10 @@ import com.devsuperior.dstools.entities.Department;
 import com.devsuperior.dstools.entities.Product;
 
 import javax.persistence.Column;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -13,16 +17,26 @@ import java.util.Set;
 public class ProductDTO {
 
     private Long id;
+
+    @Size(min = 3, max = 60, message = "Deve ter entre 3 e 60 caracteres")
+    @NotBlank(message = "Campo obrigatório")
     private String name;
     private String description;
+
+    @Positive(message = "Preço deve ser um valor positivo")
     private Double price;
+
+    @Positive(message = "Quantidade deve ser um valor positivo")
     private Integer quantity;
     private String imgUrl;
 
+    @NotEmpty(message = "Produto sem categoria não é permitido")
     private List<CategoryDTO> categories = new ArrayList<>();
 
+    @NotEmpty(message = "Produto sem marca não é permitido")
     private List<BrandDTO> brands = new ArrayList<>();
 
+    @NotEmpty(message = "Produto sem departamento não é permitido")
     private  List<DepartmentDTO> departments = new ArrayList<>();
 
 
