@@ -19,6 +19,9 @@ private static final long serialVersionUID = 1L;
     @ManyToMany(mappedBy = "departments")
     private Set<Category> categories = new HashSet<>();
 
+    @ManyToMany(mappedBy = "departments")
+    private Set<Product> products = new HashSet<>();
+
     public Department() {
     }
 
@@ -45,6 +48,10 @@ private static final long serialVersionUID = 1L;
 
     public Set<Category> getCategories() {
         return categories;
+    }
+
+    public Set<Product> getProducts() {
+        return products;
     }
 
     @Override

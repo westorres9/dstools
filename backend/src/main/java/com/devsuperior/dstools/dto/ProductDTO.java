@@ -101,4 +101,16 @@ public class ProductDTO {
     public void setImgUrl(String imgUrl) {
         this.imgUrl = imgUrl;
     }
+
+    public List<CategoryDTO> getCategories() {
+        return categories;
+    }
+
+    public List<BrandDTO> getBrands() {
+        return brands;
+    }
+
+    public List<DepartmentDTO> getDepartments() {
+        return departments;
+    }
 }

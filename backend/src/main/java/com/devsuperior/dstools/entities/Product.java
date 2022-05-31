@@ -36,6 +36,12 @@ public class Product implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "category_id"))
     private Set<Category> categories = new HashSet<>();
 
+    @ManyToMany
+    @JoinTable(name = "tb_product_brand",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "brand_id"))
+    private  Set<Department> departments = new HashSet<>();
+
     public Product() {
     }
 
@@ -102,6 +108,10 @@ public class Product implements Serializable {
 
     public Set<Brand> getBrands() {
         return brands;
+    }
+
+    public Set<Department> getDepartments() {
+        return departments;
     }
 
     @Override

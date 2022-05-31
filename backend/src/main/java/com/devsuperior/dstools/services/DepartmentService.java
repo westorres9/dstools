@@ -4,6 +4,7 @@ import com.devsuperior.dstools.dto.BrandDTO;
 import com.devsuperior.dstools.dto.DepartmentDTO;
 import com.devsuperior.dstools.entities.Brand;
 import com.devsuperior.dstools.entities.Department;
+import com.devsuperior.dstools.repositories.CategoryRepository;
 import com.devsuperior.dstools.repositories.DepartmentRepository;
 import com.devsuperior.dstools.services.exceptions.DatabaseException;
 import com.devsuperior.dstools.services.exceptions.ResourceNotFoundException;
@@ -24,6 +25,8 @@ public class DepartmentService {
 
     @Autowired
     private DepartmentRepository repository;
+
+
 
     @Transactional(readOnly = true)
     public Page<DepartmentDTO> findAllPaged(Pageable pageable) {
