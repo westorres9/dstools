@@ -9,7 +9,7 @@
 
 .main-menu {
     display: flex;
-    font-size: 18px;
+    font-size: 15px;
     width: 600px;
     justify-content: space-between;
 }
