@@ -141,7 +141,18 @@
     .home-image-container svg {
         width: 100%;
     }
-
-
 }
 
+@media (min-width:1400px) {
+
+    .home-content-container h1 {
+        font-size: 60px;
+    }
+
+    .home-content-container p {
+        font-size: 40px;
+    }
+    .home-image-container svg {
+        width: 600px;
+    }
+}
