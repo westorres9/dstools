@@ -1,3 +1,5 @@
+import { formatprice } from "utils/formatters";
+
 type Props = {
     fullPrice : number;
 }
@@ -7,7 +9,7 @@ const FullPrice = ({fullPrice} : Props) => {
     return(
         <>
             <span>De R$</span>
-            <h3 className="fullprice">{fullPrice}</h3>
+            <h3 className="fullprice">{formatprice(fullPrice)}</h3>
             
         </> 
     );
