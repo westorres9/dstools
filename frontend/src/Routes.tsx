@@ -5,6 +5,7 @@ import Catalog from "pages/Catalog";
 import Home from "pages/Home";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Sobre from "pages/Sobre";
+import ProductDetails from "pages/ProductDetails";
 
 function Routes() {
     return (
@@ -14,8 +15,11 @@ function Routes() {
                 <Route path="/" exact>
                     <Home/>
                 </Route>
-                <Route path="/products">
+                <Route path="/products" exact>
                     <Catalog/>
+                </Route>
+                <Route path="/products/:productId">
+                    <ProductDetails/>
                 </Route>
                 <Route path="/sobre">
                     <Sobre/>
