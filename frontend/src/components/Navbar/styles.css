@@ -1,6 +1,10 @@
 .main-nav {
     min-height: 70px;
     padding-left: 40px;
+    border-bottom: 5px solid #fd7e14;
+}
+.nav-logo-text {
+    display: flex;
 }
 
 .nav-logo-text, .nav-logo-text:hover {
@@ -9,6 +13,12 @@
 
 .nav-logo-text h4 {
     font-size: 25px;
+}
+
+.nav-logo-text img {
+    width: 60px;
+    height: auto;
+    margin-right: 10px;
 }
 
 .main-menu {
@@ -34,10 +44,15 @@
 @media (min-width:576px) {
 
     .nav-logo-text h4 {
-        font-size:35px;
+        font-size:28px;
     }
+
+    .nav-logo-text img {
+        width: auto;
+        height: 50px;
+    }
+
     .main-menu {
-    font-size: 18px;
-    
+        font-size: 18px;
     }
 }

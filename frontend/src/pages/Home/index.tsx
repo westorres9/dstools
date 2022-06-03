@@ -1,5 +1,6 @@
-import { ReactComponent as MainImage } from 'assets/images/home-image.svg';
+import {ReactComponent as MainImg } from 'assets/images/home-image.svg';
 import ButtonIcon from 'components/ButtonIcon';
+import { Link } from 'react-router-dom';
 import './styles.css';
 
 function Home() {
@@ -9,14 +10,16 @@ function Home() {
                 <div className="home-content-container">
                     <h1>Conheça o melhor catálogo de Ferramentas</h1>
                     <p>
-                        Só aqui você encontra as melhores ferramentas disponíveis no mercado
+                        Só aqui você encontra os melhores ferramentas do mercado!
                     </p>
                     <a href="link">
-                        <ButtonIcon />
+                        <Link to="/products">
+                            <ButtonIcon />
+                        </Link>                        
                     </a>
                 </div>
                 <div className="home-image-container">
-                    <MainImage />
+                    <MainImg/>
                 </div>
             </div>
         </div>

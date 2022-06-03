@@ -1,6 +1,5 @@
 package com.devsuperior.dstools.resources;
 
-import com.devsuperior.dstools.dto.DepartmentDTO;
 import com.devsuperior.dstools.dto.ProductDTO;
 import com.devsuperior.dstools.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,9 @@
+.container h1 {
+    margin-bottom: 10px;
+}
+
+@media (min-width:1200px) {
+    .container {
+        padding: calc(((77vh - 474px)/2) - 20px) 0;
+    }
+}
