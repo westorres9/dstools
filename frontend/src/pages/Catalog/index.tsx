@@ -5,21 +5,20 @@ import { Product } from 'types/product';
 const Catalog = () => {
 
     const product : Product = {
-        "id": 1,
-        "name": "Bonita bico PVC Nº38",
-        "description": "Botina de Segurança com elastico bico pvc Solado Bidensidade Nº38",
-        "fullPrice": 65.99,
-        "promoPrice": 59.99,
-        "financePrice": "63.99 em 1x",
-        "imgUrl": "https://user-images.githubusercontent.com/91570669/171781213-9f89350e-45ec-46dd-8329-91efe2315dbd.png",
+        "id": 2,
+        "name": "Jogo de Soquetes Estriado 8 a 32 mm",
+        "description": "O Jogo de Soquetes Estriado 8 a 32 mm Encaixe 1/2\" com 22 Peças - Robust foi feito em aço cromo-vanádio proporcionando durabilidade e resistência e cabo metálico com perfil recartilhado oferecendo firmeza e ergonomia.\n",
+        "fullPrice": 383.7,
+        "promoPrice": 255.6,
+        "financePrice": "R$ 269,05 em até 5x sem juros",
+        "imgUrl": "https://user-images.githubusercontent.com/91570669/171783595-50110020-e1d1-4cd4-b43c-a1c6c420b1b1.png",
         "categories": [
           {
-            "id": 1,
-            "name": "Epis"
+            "id": 2,
+            "name": "Ferramentas"
           }
         ]
       }
-
 return (
     <div className="container my-4">
         <div className="row">
