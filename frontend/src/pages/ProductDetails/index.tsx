@@ -3,11 +3,12 @@ import ProductImg from 'assets/images/product.png';
 import FinancePrice from 'components/FinancePrice';
 import FullPrice from 'components/FullPrice';
 import PromoPrice from 'components/PromoPrice';
+import './styles.css';
 
 const ProductDetails = () => {
     return (
         <div className="product-details-container">
-            <div className="product-details-card">
+            <div className="product-details-card base-card">
                 <div className="goback-container">
                     <ArrowIcon/>
                     <h2>VOLTAR</h2>

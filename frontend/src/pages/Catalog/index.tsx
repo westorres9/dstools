@@ -19,6 +19,7 @@ const Catalog = () => {
           }
         ]
       }
+
 return (
     <div className="container my-4">
         <div className="row">
