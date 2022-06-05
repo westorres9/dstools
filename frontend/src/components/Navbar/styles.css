@@ -5,6 +5,7 @@
 }
 .nav-logo-text {
     display: flex;
+    align-items: center;
 }
 
 .nav-logo-text, .nav-logo-text:hover {

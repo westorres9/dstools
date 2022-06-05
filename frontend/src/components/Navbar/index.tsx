@@ -1,4 +1,5 @@
 import { Link, NavLink } from 'react-router-dom';
+import LogoImg from 'assets/images/LogoImg.png';
 import 'bootstrap/js/src/collapse.js';
 import './styles.css';
 
@@ -7,6 +8,7 @@ function Navbar() {
         <div className="navbar navbar-expand-md navbar-dark bg-primary main-nav">
             <div className="container-fluid">
                 <Link to="/" className="nav-logo-text">
+                    <img src={LogoImg} alt="DSTools" />
                     <h4>DS Tools</h4>
                 </Link>
                 <button
